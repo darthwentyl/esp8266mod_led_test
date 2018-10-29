@@ -5,6 +5,7 @@ set(PROJECT_SOURCES_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set(SOURCES
     ${PROJECT_SOURCES_DIR}/main.cpp
     ${PROJECT_SOURCES_DIR}/wifi/Wifi.cpp
+    ${PROJECT_SOURCES_DIR}/wifi/SocketMngr.cpp
 )
 
 add_executable(${CMAKE_PROJECT_NAME} ${SOURCES})
