@@ -1,3 +1,5 @@
+#include <string>
+
 namespace wifi {
 
 class SocketMngr 
@@ -10,6 +12,10 @@ public:
     SocketMngr& operator = (const SocketMngr&) = delete;
     SocketMngr(SocketMngr&&) = delete;
     SocketMngr& operator = (SocketMngr&&) = delete;
+    
+    void open();
+    void send(const std::string& command);
+    std::string receive();
     
 private:
     int socket;

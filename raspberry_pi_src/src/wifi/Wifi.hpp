@@ -1,5 +1,12 @@
 #include <interfaces/WifiIfc.hpp>
 
+#include <sys/ioctl.h>
+#include <sys/stat.h>
+#include <sys/socket.h>
+#include <sys/types.h> 
+#include <linux/wireless.h>
+
+
 namespace wifi {
 
 class Wifi : public interfaces::WifiIfc
@@ -20,7 +27,7 @@ public:
     
 private:
     std::string ssid;
-    
+    struct iwreq wreq;
 };
 
 } // wifi
