@@ -1,6 +1,4 @@
 #include <wifi/SocketMngr.hpp>
-#include <exception/CannotOpenSocket.hpp>
-#include <exception/WrongWifiEssid.hpp>
 
 namespace wifi {
 

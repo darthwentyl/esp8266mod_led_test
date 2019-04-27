@@ -1,9 +1,4 @@
-/*
- * SendException.hpp
- *
- *  Created on: 30 gru 2017
- *      Author: mwendlan
- */
+#pragma once
 
 #include <stdexcept>
 

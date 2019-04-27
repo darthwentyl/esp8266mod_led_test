@@ -1,10 +1,3 @@
-/*
- * ReceiveException.hpp
- *
- *  Created on: 8 sty 2018
- *      Author: mwendlan
- */
-
 #pragma once
 
 #include <stdexcept>
