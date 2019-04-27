@@ -5,10 +5,10 @@
 namespace exception 
 {
 
-class WrongWifiEssidException : public std::runtime_error
+class CannotGetIpException : public std::runtime_error
 {
 public:
-    WrongWifiEssidException(const std::string& msg) 
+    CannotGetIpException(const std::string& msg)
     : std::runtime_error(msg)
     {}
 };

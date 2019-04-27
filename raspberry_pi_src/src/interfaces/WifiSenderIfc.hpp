@@ -4,7 +4,7 @@
 
 namespace interfaces {
 
-class WiFiSenderIfc
+class WifiSenderIfc
 {
 public:
     virtual ~WifiSenderIfc() = default;

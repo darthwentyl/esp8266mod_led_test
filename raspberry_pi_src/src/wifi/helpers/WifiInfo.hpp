@@ -8,6 +8,7 @@ struct WifiInfo
 {
     std::string ssid;
     std::string iw_interface;
+    std::string ip;
 };
 
 } } // wifi::helpers

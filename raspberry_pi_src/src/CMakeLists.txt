@@ -7,6 +7,8 @@ set(SOURCES
     ${PROJECT_SOURCES_DIR}/main.cpp
     ${PROJECT_SOURCES_DIR}/wifi/WifiConnector.cpp
     ${PROJECT_SOURCES_DIR}/wifi/SocketMngr.cpp
+    ${PROJECT_SOURCES_DIR}/wifi/WifiReceiver.cpp
+    ${PROJECT_SOURCES_DIR}/wifi/WifiSender.cpp
     ${PROJECT_SOURCES_DIR}/wifi/tcp/TcpClient.cpp
     ${PROJECT_SOURCES_DIR}/wifi/tcp/TcpListener.cpp
     ${PROJECT_SOURCES_DIR}/wifi/tcp/TcpReceiver.cpp
@@ -14,6 +16,7 @@ set(SOURCES
     ${PROJECT_SOURCES_DIR}/wifi/tcp/TcpSetup.cpp
     ${PROJECT_SOURCES_DIR}/wifi/helpers/WifiConnect.cpp
     ${PROJECT_SOURCES_DIR}/wifi/helpers/ConfigFileReader.cpp
+    ${PROJECT_SOURCES_DIR}/wifi/helpers/WifiGetIp.cpp
 )
 
 include_directories(${PROJECT_INCLUDE_DIR})

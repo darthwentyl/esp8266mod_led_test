@@ -4,10 +4,10 @@
 
 namespace interfaces {
 
-class WiFiReceiverIfc
+class WifiReceiverIfc
 {
 public:
-    virtual ~WiFiReceiverIfc() = default;
+    virtual ~WifiReceiverIfc() = default;
     
     virtual std::string receive() = 0;
 };

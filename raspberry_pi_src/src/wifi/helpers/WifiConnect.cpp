@@ -1,5 +1,6 @@
 #include <wifi/helpers/WifiConnect.hpp>
 #include <wifi/helpers/ConfigFileReader.hpp>
+#include <wifi/helpers/WifiGetIp.hpp>
 
 #include <iostream>
 
@@ -11,38 +12,32 @@
 
 namespace wifi { namespace helpers {
 
-// memset(&wreq, 0, sizeof(struct iwreq));
-// wreq.u.essid.length = IW_ESSID_MAX_SIZE+1;
-// sprintf(wreq.ifr_name, IW_INTERFACE);
-
 WifiConnect::WifiConnect()
 {}
 
 void WifiConnect::connect()
 {
-    readConfigFile();
-    checkConnection();
-    getIp();
-    createConnection();
-}
-
-void WifiConnect::readConfigFile()
-{
     try {
-        ConfigFileReader reader;
-        wifiInfo = reader.getWifiInfo();
+        readConfigFile();
+        getIp();
+        createConnection();
     }
     catch(const std::exception& e) {
         std::cerr << e.what() << std::endl;
     }
 }
 
-void WifiConnect::checkConnection()
+void WifiConnect::readConfigFile()
 {
+    ConfigFileReader reader;
+    wifiInfo = reader.getWifiInfo();
 }
 
 void WifiConnect::getIp()
 {
+    WifiGetIp wifiGetIp(wifiInfo);
+    wifiGetIp.getIp();
+    std::cout << "ip: " << wifiInfo.ip << std::endl;
 }
 
 void WifiConnect::createConnection()

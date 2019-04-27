@@ -21,7 +21,6 @@ public:
 
 private:
     void readConfigFile();
-    void checkConnection();
     void getIp();
     void createConnection();
 
