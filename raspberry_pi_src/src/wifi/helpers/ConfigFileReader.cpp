@@ -36,7 +36,8 @@ WifiInfo ConfigFileReader::getWifiInfo()
 void ConfigFileReader::parseWifiInfo(WifiInfo& wifiInfo, std::stringstream& buffer)
 {
     buffer >> wifiInfo.iw_interface
-           >> wifiInfo.ssid;
+           >> wifiInfo.ssid
+           >> wifiInfo.port;
 }
 
 } } // wifi::helpers

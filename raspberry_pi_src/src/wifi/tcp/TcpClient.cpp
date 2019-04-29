@@ -60,5 +60,14 @@ bool TcpClient::setup(const std::string& address, const int port)
     return true;
 }
 
+void TcpClient::disconnect()
+{
+    if(socket != -1)
+    {
+        close(socket);
+        socket = -1;
+    }
+}
+
 } } // wifi::tcp
 

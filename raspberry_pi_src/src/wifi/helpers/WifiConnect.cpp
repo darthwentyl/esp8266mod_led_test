@@ -1,6 +1,7 @@
 #include <wifi/helpers/WifiConnect.hpp>
 #include <wifi/helpers/ConfigFileReader.hpp>
 #include <wifi/helpers/WifiGetIp.hpp>
+#include <wifi/tcp/TcpClient.hpp>
 
 #include <iostream>
 
@@ -12,7 +13,10 @@
 
 namespace wifi { namespace helpers {
 
-WifiConnect::WifiConnect()
+using namespace tcp;
+
+WifiConnect::WifiConnect(TcpClient& tcpClient)
+: tcpClient(tcpClient)
 {}
 
 void WifiConnect::connect()
@@ -37,11 +41,12 @@ void WifiConnect::getIp()
 {
     WifiGetIp wifiGetIp(wifiInfo);
     wifiGetIp.getIp();
-    std::cout << "ip: " << wifiInfo.ip << std::endl;
 }
 
 void WifiConnect::createConnection()
 {
+    std::cout << wifiInfo << std::endl;
+    tcpClient.setup(wifiInfo.ip, wifiInfo.port);
 }
 
 } } // wifi::helpers

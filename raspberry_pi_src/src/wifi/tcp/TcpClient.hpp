@@ -16,7 +16,8 @@ public:
     bool send(const std::string& data);
     std::string receive(const size_t size);
     bool setup(const std::string& address, const int port);
-
+    void disconnect();
+    
 private:
     int socket;
     struct sockaddr_in server;

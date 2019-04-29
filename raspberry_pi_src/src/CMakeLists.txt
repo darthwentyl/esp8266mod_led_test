@@ -6,7 +6,7 @@ set(PROJECT_SOURCES_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set(SOURCES
     ${PROJECT_SOURCES_DIR}/main.cpp
     ${PROJECT_SOURCES_DIR}/wifi/WifiConnector.cpp
-    ${PROJECT_SOURCES_DIR}/wifi/SocketMngr.cpp
+    ${PROJECT_SOURCES_DIR}/wifi/WifiMngr.cpp
     ${PROJECT_SOURCES_DIR}/wifi/WifiReceiver.cpp
     ${PROJECT_SOURCES_DIR}/wifi/WifiSender.cpp
     ${PROJECT_SOURCES_DIR}/wifi/tcp/TcpClient.cpp
@@ -17,6 +17,7 @@ set(SOURCES
     ${PROJECT_SOURCES_DIR}/wifi/helpers/WifiConnect.cpp
     ${PROJECT_SOURCES_DIR}/wifi/helpers/ConfigFileReader.cpp
     ${PROJECT_SOURCES_DIR}/wifi/helpers/WifiGetIp.cpp
+    ${PROJECT_SOURCES_DIR}/wifi/helpers/WifiInfo.cpp
 )
 
 include_directories(${PROJECT_INCLUDE_DIR})

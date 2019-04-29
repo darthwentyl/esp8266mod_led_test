@@ -2,12 +2,16 @@
 
 #include <interfaces/WifiConnectorIfc.hpp>
 
+namespace wifi { namespace tcp {
+class TcpClient;
+} } // wifi::tcp
+
 namespace wifi {
 
 class WifiConnector : public interfaces::WifiConnectorIfc
 {
 public:
-    WifiConnector();
+    WifiConnector(tcp::TcpClient& tcpClient);
     ~WifiConnector() = default;
     
     WifiConnector(const WifiConnector&) = delete;
@@ -18,6 +22,8 @@ public:
     void connect() override;
     void disconnect() override;
 private:
+
+    tcp::TcpClient& tcpClient;
 };
 
 } // wifi

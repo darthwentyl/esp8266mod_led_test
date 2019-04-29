@@ -50,7 +50,7 @@ void TcpSetup::bindSocket()
     struct sockaddr_in client;
     client.sin_family = AF_INET;
     client.sin_port = htons(54321);
-    client.sin_addr.s_addr = htonl(INADDR_ANY); //getAddress();
+    client.sin_addr.s_addr = htonl(INADDR_ANY);
     if(bind(socketFd, (struct sockaddr*)&client, sizeof(struct sockaddr_in)) == -1)
     {
         throw BindSocketException();
@@ -62,7 +62,7 @@ void TcpSetup::setServerData()
     memset((char*)&server, 0, sizeof(server));
     server.sin_family = AF_INET;
     server.sin_port = htons(port);
-    server.sin_addr.s_addr = htonl(INADDR_ANY); //getAddress();
+    server.sin_addr.s_addr = htonl(getAddress());
 }
 
 } } // wifi::tcp

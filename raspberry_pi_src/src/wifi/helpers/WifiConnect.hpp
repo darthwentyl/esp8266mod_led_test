@@ -4,12 +4,16 @@
 
 #include <string>
 
+namespace wifi { namespace tcp {
+class TcpClient;
+} } // wifi::tcp
+
 namespace wifi { namespace helpers {
 
 class WifiConnect
 {
 public:
-    WifiConnect();
+    WifiConnect(tcp::TcpClient& tcpClient);
     ~WifiConnect() = default;
     
     WifiConnect(const WifiConnect&) = delete;
@@ -25,6 +29,8 @@ private:
     void createConnection();
 
     WifiInfo wifiInfo;
+    tcp::TcpClient& tcpClient;
 };
 
 } } // wifi::helpers
+
